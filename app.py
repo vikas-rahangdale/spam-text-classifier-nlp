@@ -1,6 +1,9 @@
 # app.py
 import nltk
-nltk.download('stopwords')
+import re
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+from nltk.stem import WordNetLemmatizer
+
 nltk.download('punkt')
 nltk.download('wordnet')
 import streamlit as st
