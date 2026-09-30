@@ -1,0 +1,13 @@
+ipykernel
+streamlit
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+wordcloud
+nltk
+xgboost
+lightgbm
+transformers
+torch
