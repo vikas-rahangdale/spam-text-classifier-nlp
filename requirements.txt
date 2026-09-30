@@ -9,5 +9,8 @@ wordcloud
 nltk
 xgboost
 lightgbm
-transformers
-torch
+transformers==4.41.2
+torch==2.2.2
+sentencepiece
+safetensors
+
