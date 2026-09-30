@@ -2,7 +2,7 @@ ipykernel
 streamlit
 scikit-learn
 pandas
-numpy
+numpy==1.26.4
 matplotlib
 seaborn
 wordcloud
