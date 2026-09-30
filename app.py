@@ -1,11 +1,8 @@
 # app.py
-import nltk
 import re
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from nltk.stem import WordNetLemmatizer
 
-nltk.download('punkt')
-nltk.download('wordnet')
 import streamlit as st
 import pickle
 import re, nltk
@@ -16,7 +13,11 @@ from nltk.stem import WordNetLemmatizer
 st.set_page_config(page_title="MessageGuard | Spam Classifier", page_icon="✉️", layout="centered")
 
 # --- preprocessing function ---
-stop_words = set(stopwords.words('english'))
+import re
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+from nltk.stem import WordNetLemmatizer
+
+stop_words = ENGLISH_STOP_WORDS
 lemmatizer = WordNetLemmatizer()
 
 def clean_text(text):
@@ -24,7 +25,7 @@ def clean_text(text):
     text = re.sub(r"http\S+|www\S+", " url ", text)
     text = re.sub(r"\d+", " number ", text)
     text = re.sub(r"[^\w\s]", " ", text)
-    tokens = nltk.word_tokenize(text)
+    tokens = text.split()  # simple split instead of nltk.word_tokenize
     tokens = [lemmatizer.lemmatize(w) for w in tokens if w not in stop_words]
     return " ".join(tokens)
 
